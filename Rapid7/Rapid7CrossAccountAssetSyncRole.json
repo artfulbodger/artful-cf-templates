@@ -5,8 +5,8 @@
         "SecurityConsoleAccount": {
             "Description": "AWS Account number where the Security Console EC2 instance is hosted",
             "Type": "String",
-            "AllowedPattern": "\d{12}",
-            "ConstraintDescription": "AWS account numbers are 1q2 digits long"
+            "AllowedPattern": "\\d{12}",
+            "ConstraintDescription": "Please provide a valid AWS Account Number.  AWS account numbers are 12 digits long"
         }
     },
     "Resources": {
@@ -20,21 +20,16 @@
                     "Version": "2012-10-17",
                     "Statement": [
                         {
-                            "Version": "2012-10-17",
-                            "Statement": [
-                                {
-                                    "Effect": "Allow",
-                                    "Action": [
-                                        "ec2:DescribeInstances",
-                                        "ec2:DescribeImages",
-                                        "ec2:DescribeAddresses",
-                                        "ec2:DescribeNetworkInterfaces",
-                                        "cloudtrail:LookupEvents",
-                                        "cloudtrail:DescribeTrails"
-                                    ],
-                                    "Resource": "*"
-                                }
-                            ]
+                            "Effect": "Allow",
+                            "Action": [
+                                "ec2:DescribeInstances",
+                                "ec2:DescribeImages",
+                                "ec2:DescribeAddresses",
+                                "ec2:DescribeNetworkInterfaces",
+                                "cloudtrail:LookupEvents",
+                                "cloudtrail:DescribeTrails"
+                            ],
+                            "Resource": "*"
                         }
                     ]
                 },
