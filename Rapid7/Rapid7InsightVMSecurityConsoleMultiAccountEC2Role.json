@@ -6,7 +6,7 @@
             "Type": "AWS::IAM::ManagedPolicy",
             "Properties": {
                 "Description": "Policy for read permissions for Asset Discovery",
-                "ManagedPolicyName": "Rapid7 Asset Sync",
+                "ManagedPolicyName": "Rapid7 Asset Sync - Multi Account",
                 "Path": "/",
                 "PolicyDocument": {
                     "Version": "2012-10-17",
@@ -15,6 +15,7 @@
                         "Action": [
                             "ec2:DescribeImages",
                             "cloudtrail:LookupEvents",
+                            "sts:AssumeRole",
                             "ec2:DescribeAddresses",
                             "ec2:DescribeInstances",
                             "ec2:DescribeNetworkInterfaces",
@@ -25,12 +26,12 @@
                 },
                 "Roles": [
                     {
-                        "Ref": "Rapid7AssetSyncEC2Role"
+                        "Ref": "Rapid7AssetSyncMultiAccouuntEC2Role"
                     }
                 ]
             }
         },
-        "Rapid7AssetDiscoveryEC2Role": {
+        "Rapid7AssetSyncMultiAccouuntEC2Role": {
             "Type": "AWS::IAM::Role",
             "Properties": {
                 "AssumeRolePolicyDocument": {
@@ -46,7 +47,7 @@
                     ]
                 },
                 "Path": "/",
-                "RoleName": "Rapid7AssetSyncEC2Role"
+                "RoleName": "Rapid7AssetSyncMultiAccouuntEC2Role"
             }
         }
     }
