@@ -49,13 +49,6 @@
                         {
                             "Effect": "Allow",
                             "Principal": {
-                                "Service": "ec2.amazonaws.com"
-                            },
-                            "Action": "sts:AssumeRole"
-                        },
-                        {
-                            "Effect": "Allow",
-                            "Principal": {
                                 "AWS": {
                                     "Fn::Sub": [
                                         "arn:aws:iam::${accountid}:root",
