@@ -1,6 +1,8 @@
 # CloudFormation Templates
 AWS CloudFormation provides a common language for you to model and provision AWS and third party application resources in your cloud environment.  CloudFormation Templates help you to define your Cloud Infrastructure as code.
 
+[![PR checks](https://github.com/artfulbodger/artful-cf-templates/actions/workflows/pull-request.yml/badge.svg)](https://github.com/artfulbodger/artful-cf-templates/actions/workflows/pull-request.yml)
+
 #### AWS
 - SecurityHubXRAggregator
 -- Creates a cross-Region aggregator in the current Region
