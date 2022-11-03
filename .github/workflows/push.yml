@@ -1,0 +1,17 @@
+name: "Security Static Analysis"
+on: [push]
+jobs:
+  checkov-job:
+    runs-on: ubuntu-latest
+    name: checkov-action
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+      - name: Run Checkov action
+        id: checkov
+        uses: bridgecrewio/checkov-action@99bb2caf247dfd9f03cf984373bc6043d4e32ebf
+  cfnag-job:
+    name: CF_Nag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: stelligent/cfn_nag@97717cb8d6cf9659d9c51d269b00fb24427bef18
