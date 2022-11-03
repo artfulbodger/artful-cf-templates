@@ -20,5 +20,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: stelligent/cfn_nag@master
-        with:
-          input_path: Templates
